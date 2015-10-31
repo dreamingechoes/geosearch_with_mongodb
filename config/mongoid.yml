@@ -16,11 +16,21 @@ test:
         read:
           mode: primary
         max_pool_size: 1
-        
+
+   development:
+     clients:
+       default:
+         database: mongoid_dev
+         hosts:
+           - localhost:27017
+
+        production:
+
 production:
   sessions:
     default:
-      uri: <%= ENV['MONGOLAB_URI'] %>
+      hosts:
+        - <%= ENV['MONGOLAB_URI'] %>
       options:
         skip_version_check: true
         safe: true
