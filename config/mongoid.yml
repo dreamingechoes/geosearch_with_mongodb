@@ -4,22 +4,8 @@ development:
       database: geosearch_with_mongodb_development
       hosts:
         - localhost:27017
-      options:
-
-test:
-  clients:
+        
+production:
+  sessions:
     default:
-      database: geosearch_with_mongodb_test
-      hosts:
-        - localhost:27017
-      options:
-        read:
-          mode: primary
-        max_pool_size: 1
-
-   development:
-     clients:
-       default:
-         database: mongoid_dev
-         hosts:
-           - localhost:27017
+      uri: <%= ENV['MONGOLAB_URI'] %>
