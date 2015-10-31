@@ -23,11 +23,3 @@ test:
          database: mongoid_dev
          hosts:
            - localhost:27017
-
-        production:
-
-production:
-  uri: <%= ENV['MONGOLAB_URI'] %>
-  max_retries_on_connection_failure: 20
-  persist_in_safe_mode: true
-  skip_version_check: true
