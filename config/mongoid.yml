@@ -4,8 +4,8 @@ development:
       database: geosearch_with_mongodb_development
       hosts:
         - localhost:27017
-        
+
 production:
-  sessions:
+  clients:
     default:
       uri: <%= ENV['MONGOLAB_URI'] %>
