@@ -18,6 +18,7 @@
 //= require_tree .
 
 $(document).ready(function(){
+
   $(document).on('click', '#search', function(event) {
     $.ajax({
       url: '/search_shops',
@@ -56,9 +57,9 @@ $(document).ready(function(){
     GMapz.pins = {
       'default': {
         pin: {
-          img: 'assets/gmapz/pin-cluster.png',
-          size: [48.0, 48.0],
-          anchor: [24.0, 48.0]
+          img: 'http://maps.google.com/mapfiles/ms/micons/purple.png',
+          size: [32.0, 32.0],
+          anchor: [16.0, 32.0]
         }
       }
     };
@@ -77,10 +78,10 @@ $(document).ready(function(){
 
     var marker_cluster_style = [{
       textColor: 'white',
-      url: 'assets/gmapz/pin-cluster.png',
-      height: 48,
-      width: 48,
-      textSize: '17',
+      url: 'http://maps.google.com/mapfiles/ms/micons/purple.png',
+      height: 32,
+      width: 32,
+      textSize: '12',
       backgroundPosition: '0 0'
     }];
 
@@ -98,4 +99,5 @@ $(document).ready(function(){
       );
     };
   }
+
 });
