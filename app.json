@@ -15,7 +15,7 @@
     "mongolab:shared-single-small"
   ],
   "scripts": {
-    "postdeploy": "bundle exec rake db:seed"
+    "postdeploy": "bundle exec rake db:seed && bundle exec rake db:mongoid:create_indexes"
   },
   "env": {
     "RAILS_ENV": "production"
