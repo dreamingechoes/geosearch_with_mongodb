@@ -46,6 +46,7 @@ user@computer:~$ git clone git@github.com:dreamingechoes/greosearch_with_mongodb
 user@computer:~$ cd greosearch_with_mongodb
 user@computer:/greosearch_with_mongodb$ bundle install
 user@computer:/greosearch_with_mongodb$ rake db:seed
+user@computer:/greosearch_with_mongodb$ rake db:mongoid:create_indexes
 ```
 
 * When all this finish, you're ready to launch the app!
