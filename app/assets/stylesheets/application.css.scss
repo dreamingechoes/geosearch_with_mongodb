@@ -10,6 +10,69 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require gmapz_rails
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding-top: 50px;
+}
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.home-row {
+  margin-bottom: 24px;
+}
+
+.bs-callout {
+  padding: 20px;
+  margin: 20px 0;
+  border-width: 1px 1px 1px 5px;
+  border-style: solid;
+  border-color: #eee;
+  -moz-border-top-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  border-image: none;
+  border-radius: 3px;
+  text-align: left;
+}
+
+.bs-callout-danger {
+    border-left-color: #CE4844;
+}
+
+.bs-callout-danger h4 {
+  color: #CE4844;
+}
+
+.bs-callout h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.alert-info {
+  text-align: left;
+}
+
+.map {
+  height: 320px;
+  background-color: #ccc;
+  margin: 24px auto;
+  padding: 48px 12px 0 12px;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.input-group {
+  margin-bottom: 12px;
+}
+
+tbody > tr > td {
+  text-align: left;
+}

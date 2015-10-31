@@ -1,1 +1,33 @@
-<h3>Welcome</h3>
+<h1>Geosearch With Mongodb</h1>
+
+<div id="map-wrapper">
+  <div class="map" id="results-map">
+    Enter an address for search the shops available near there.
+    <br>
+    Results will appear here.
+  </div>
+</div>
+
+<div class="bs-callout bs-callout-danger hide" id="bs-callout-error">
+  <h4>Error:</h4>
+  <p id="message-error"> </p>
+</div>
+
+<div class="row home-row">
+  <div class="col-lg-12">
+    <div class="input-group">
+      <input class="form-control" id="limit" placeholder="Limit of shops..." type="number">
+    </div>
+
+    <div class="input-group">
+      <input class="form-control" id="distance" placeholder="Max. distance (km)..." type="number">
+    </div>
+
+    <div class="input-group">
+      <input class="form-control" id="address" placeholder="Insert complete address..." type="text">
+      <span class="input-group-btn">
+        <button class="btn btn-default" id="search" type="button">Search shops</button>
+      </span>
+    </div>
+  </div>
+</div>

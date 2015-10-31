@@ -49,6 +49,7 @@ GEM
     bootstrap-sass (3.3.5.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.3.0)
+    bson (3.2.6)
     builder (3.2.2)
     byebug (6.0.2)
     coderay (1.1.0)
@@ -64,8 +65,10 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.8)
     execjs (2.6.0)
+    geocoder (1.2.12)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmapz_rails (0.1.1)
     high_voltage (2.4.0)
     i18n (0.7.0)
     jbuilder (2.3.2)
@@ -83,10 +86,17 @@ GEM
     mime-types (2.6.2)
     mini_portile (0.6.2)
     minitest (5.8.2)
+    mongo (2.1.2)
+      bson (~> 3.0)
+    mongoid (5.0.0)
+      activemodel (~> 4.0)
+      mongo (~> 2.1)
+      origin (~> 2.1)
+      tzinfo (>= 0.3.37)
     multi_json (1.11.2)
-    mysql2 (0.3.20)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
+    origin (2.1.1)
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
@@ -165,10 +175,12 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   coffee-rails (~> 4.1.0)
+  geocoder
+  gmapz_rails
   high_voltage
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2 (~> 0.3.18)
+  mongoid
   quiet_assets
   rails (= 4.2.4)
   rails_12factor
