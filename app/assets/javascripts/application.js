@@ -19,7 +19,7 @@
 
 $(document).ready(function(){
 
-  $(document).on('click', '#search', function(event) {
+  function ask_for_shops() {
     $.ajax({
       url: '/search_shops',
       type: 'json',
@@ -39,8 +39,7 @@ $(document).ready(function(){
                            iw: element.description };
             i += 1;
           });
-
-          initResultsMap(results);
+          results_map.addLocations(results).centerToMarker(0, 14);
           $('#distance').val('');
           $('#limit').val('');
           $('#address').val('');
@@ -51,53 +50,48 @@ $(document).ready(function(){
         $('#message-error').html('There has been some error to process the request. Please complete all data.');
       }
     });
-  });
-
-  function initResultsMap(results) {
-    GMapz.pins = {
-      'default': {
-        pin: {
-          img: 'http://maps.google.com/mapfiles/ms/micons/purple.png',
-          size: [32.0, 32.0],
-          anchor: [16.0, 32.0]
-        }
-      }
-    };
-
-    var results_map_options = {
-      mapTypeId: 'ROADMAP',
-      center: [results[0]['lat'], results[0]['lng']],
-      zoom: 14
-    };
-
-    results_map = new GMapz.map(
-      $('#results-map'),
-      results_map_options,
-      results
-    );
-
-    var marker_cluster_style = [{
-      textColor: 'white',
-      url: 'http://maps.google.com/mapfiles/ms/micons/purple.png',
-      height: 32,
-      width: 32,
-      textSize: '12',
-      backgroundPosition: '0 0'
-    }];
-
-    results_map.onReady = function() {
-      markers_array = $.map(this.markers, function(val, idx){
-        return [val];
-      });
-      this.marker_cluster = new MarkerClusterer(
-        this.map,
-        markers_array, {
-          gridSize: 100,
-          maxZoom: 15,
-          styles: marker_cluster_style
-        }
-      );
-    };
   }
+
+  GMapz.debug = true;
+  
+  GMapz.pins = {
+    'default': {
+      pin: {
+        img: 'http://maps.google.com/mapfiles/ms/micons/purple.png',
+        size: [32.0, 32.0],
+        anchor: [16.0, 32.0]
+      }
+    }
+  };
+
+  var results_map_options = {
+    mapTypeId: 'ROADMAP',
+    center: [40.337977, -3.709757],
+    zoom: 5
+  };
+
+  var marker_cluster_style = [{
+    textColor: 'white',
+    url: 'http://maps.google.com/mapfiles/ms/micons/purple.png',
+    height: 32,
+    width: 32,
+    textSize: '12',
+    backgroundPosition: '0 0'
+  }];
+
+  var results_map = new GMapz.map(
+    $('#results-map'),
+    results_map_options
+  );
+
+  results_map.onReady = function() {
+    $(document).on('click', '#search', function(event) {
+      ask_for_shops();
+    });
+
+    markers_array = $.map(this.markers, function(val, idx){
+      return [val];
+    });
+  };
 
 });
