@@ -42,17 +42,17 @@ To start using this bot, you only have to do the typical ***Rails*** things:
 * Clone the repo and do the ***bundle install*** thing:
 
 ```sh
-user@computer:~$ git clone git@github.com:dreamingechoes/greosearch_with_mongodb.git
-user@computer:~$ cd greosearch_with_mongodb
-user@computer:/greosearch_with_mongodb$ bundle install
-user@computer:/greosearch_with_mongodb$ rake db:seed
-user@computer:/greosearch_with_mongodb$ rake db:mongoid:create_indexes
+user@computer:~$ git clone git@github.com:dreamingechoes/geosearch_with_mongodb.git
+user@computer:~$ cd geosearch_with_mongodb
+user@computer:/geosearch_with_mongodb$ bundle install
+user@computer:/geosearch_with_mongodb$ rake db:seed
+user@computer:/geosearch_with_mongodb$ rake db:mongoid:create_indexes
 ```
 
 * When all this finish, you're ready to launch the app!
 
 ```sh
-user@computer:/greosearch_with_mongodb$ rails s
+user@computer:/geosearch_with_mongodb$ rails s
 ```
 
 * Open your web browser and go to [http://localhost:3000](http://localhost:3000) like in all the regular ***Rails*** apps.
